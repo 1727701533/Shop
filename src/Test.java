@@ -1,7 +1,5 @@
-import java.io.File;
 import java.io.InputStream;
 import java.util.Scanner;
-import java.util.concurrent.Callable;
 
 public class Test {
     public static void main(String[] args) throws ClassNotFoundException {
@@ -16,7 +14,7 @@ public class Test {
 
             //File file=new File("C:\\Users\\G150T\\IdeaProjects\\Shop\\src\\users.xlsx");
             InputStream in=Class.forName("Test").getResourceAsStream("/users.xlsx");
-            ReadExcel readExcel=new ReadExcel();
+            ReadUserExcel readExcel=new ReadUserExcel();
             User users[]=readExcel.readExcel(in);
             for(int i=0;i<users.length;i++){
                 if(username.equals(users[i].getUsername()) && password.equals(users[i].getPassword())){

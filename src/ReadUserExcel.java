@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 
-public class ReadExcel {
+public class ReadUserExcel {
     public User[] readExcel(InputStream in) {
         User users[] = null;
         try {
@@ -58,7 +58,6 @@ public class ReadExcel {
                 value = cell.getBooleanCellValue() + "";
                 break;
             case NUMERIC:
-
                 value = df.format(cell.getNumericCellValue());//double和一个空字符串相连接，最终得到字符串
                 System.out.println("处理后的"+value);
                 break;
