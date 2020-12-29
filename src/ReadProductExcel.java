@@ -43,7 +43,7 @@ public class ReadProductExcel {
 
     private String getValue(XSSFCell cell) {
         String value;
-        CellType type = cell.getCellTypeEnum();
+        CellType type = cell.getCellType();
         DecimalFormat df = new DecimalFormat("#");
         switch (type) {
             case STRING:
