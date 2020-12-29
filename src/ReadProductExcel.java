@@ -9,6 +9,15 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 
 public class ReadProductExcel {
+    public static void main(String[] args) throws ClassNotFoundException{
+        InputStream in = Class.forName("Test").getResourceAsStream("/product.xlsx");
+        Product[]products=new ReadProductExcel().readExcel(in);
+        for(Product product:products){
+            System.out.println(product.getName());
+            System.out.println("\t"+product.getPrice());
+            System.out.println("\t"+product.getDesc());
+        }
+    }
     public Product[] readExcel(InputStream in) {
         Product products[] = null;
         try {
