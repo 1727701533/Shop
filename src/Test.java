@@ -39,14 +39,19 @@ public class Test {
                     /*
                     遍历数组
                      */
+                    int count=0;
+                    Product productes[]=new Product[3];//创建购物车（用数组模拟）
                     System.out.println("请输入商品ID，把该商品加入购物车");
                     String pId=sc.next();
                     ReadProductExcel readProductExcel1=new ReadProductExcel();
                     inPro=null;
                     inPro=Class.forName("Test").getResourceAsStream("/product.xlsx");
-                    readProductExcel1.getProductById(pId,inPro);
-                    if(products!=null){
-                        System.out.println("找到该商品");
+                    Product product=readProductExcel1.getProductById(pId,inPro);
+                    if(product!=null){
+                        /*
+                        把商品加入购物车
+                         */
+                        productes[count++]=product;
                     }
                     break;
                 }else{
